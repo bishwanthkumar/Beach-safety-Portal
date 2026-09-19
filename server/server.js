@@ -106,7 +106,13 @@ app.get('/api/beaches', async (req, res) => {
       const filter = q ? { $or: [{ name: regex }, { district: regex }, { state: regex }, { tags: regex }] } : {};
       list = await Beach.find(filter).sort({ name: 1 }).limit(limit).lean();
     } else {
-      list = fallbackBeaches.filter((b) => !regex || regex.test(b.name) || regex.test(b.district) || regex.test(b.state) || b.tags?.some((t) => regex.test(t))).slice(0, limit).map((b, i) => toPlainFallbackBeach(b, fallbackBeaches.indexOf(b)));
+      list = fallbackBeaches.filter((b) => !regex || regex.test(b.name) || regex.test(b.district) || regex.test(b.state) || b.tags?.some((t) => regex.test(t))).slice(0, limit).map((b) => toPlainFallbackBeach(b, fallbackBeaches.indexOf(b)));
+      list = await Promise.all(list.map(async (beach) => {
+        const fallbackIndex = Number(String(beach._id).replace('fallback-', ''));
+        const alerts = await getBeachAlerts(beach._id, fallbackIndex);
+        const alertLevel = alerts.some((alert) => ['high', 'emergency'].includes(alert.severity)) ? 'high' : alerts.some((alert) => alert.severity === 'caution') ? 'yellow' : beach.safety?.alertLevel || 'green';
+        return { ...beach, safety: { ...beach.safety, alertLevel } };
+      }));
     }
     res.json({ success: true, data: list, source: mongoReady ? 'MongoDB' : 'fallback' });
   } catch (err) {

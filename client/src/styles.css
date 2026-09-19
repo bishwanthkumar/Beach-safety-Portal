@@ -468,6 +468,16 @@ small {
 .live-search-copy strong { overflow: hidden; color: #fff; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
 .live-search-copy small { color: rgba(217, 242, 238, 0.68); font-size: 11px; }
 .live-search-card > svg { color: #f4b46a; }
+.search-alert { display: inline-flex; width: fit-content; margin-top: 4px; padding: 3px 7px; border-radius: 999px; font-size: 9px; font-style: normal; font-weight: 800; text-transform: uppercase; letter-spacing: .6px; }
+.search-alert.high { background: #fee2e2; color: #b42318; }
+.search-alert.caution { background: #fef3c7; color: #9a6700; }
+.beach-alert-notification { position: fixed; top: 92px; right: 24px; z-index: 1300; width: min(420px, calc(100% - 32px)); padding: 16px 42px 16px 18px; border: 1px solid; border-radius: 12px; box-shadow: 0 16px 36px rgba(16, 42, 54, .18); animation: slideInRight .3s ease; }
+.beach-alert-notification strong, .beach-alert-notification span { display: block; }
+.beach-alert-notification strong { font-size: 14px; }
+.beach-alert-notification span { margin-top: 5px; font-size: 12px; line-height: 1.5; }
+.beach-alert-notification button { position: absolute; top: 8px; right: 10px; border: 0; background: transparent; color: inherit; font-size: 22px; line-height: 1; }
+.beach-alert-notification.high { background: #fff0ed; border-color: #efb5aa; color: #9f2f24; }
+.beach-alert-notification.caution { background: #fff8e8; border-color: #efd69a; color: #8a5d0b; }
 
 /* COMMON */
 .eyebrow { 

@@ -26,11 +26,26 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const [error, setError] = useState('');
+  const [beachNotice, setBeachNotice] = useState(null);
   const nav = useNavigate();
   const { language } = useContext(LanguageContext);
   const { t } = useLanguage(language);
 
   const searchHint = useMemo(() => q.trim() ? `Search results for "${q.trim()}"` : t('searchHint'), [q, t]);
+
+  function openBeach(beach) {
+    const alertLevel = beach?.safety?.alertLevel;
+    if (alertLevel === 'high' || alertLevel === 'red') {
+      setBeachNotice({ type: 'high', name: beach.name });
+      setTimeout(() => nav(`/beaches/${beach._id}`), 1800);
+    } else if (alertLevel === 'yellow' || alertLevel === 'caution') {
+      setBeachNotice({ type: 'caution', name: beach.name });
+      setTimeout(() => nav(`/beaches/${beach._id}`), 1500);
+    } else {
+      setBeachNotice(null);
+      nav(`/beaches/${beach._id}`);
+    }
+  }
 
   useEffect(() => {
     const query = q.trim();
@@ -57,7 +72,7 @@ export default function Home() {
       const items = await searchBeaches(q.trim());
       setSuggestions(items);
       if (!items.length) setError(`${t('noBeachFound')} "${q.trim()}". ${t('tryBeachName')}`);
-      if (items[0]?._id) setTimeout(() => nav(`/beaches/${items[0]._id}`), 950);
+      if (items[0]?._id) setTimeout(() => openBeach(items[0]), 950);
     } catch (err) {
       setSuggestions([]);
       setError(err.message || 'Could not search right now.');
@@ -68,6 +83,7 @@ export default function Home() {
   return (
     <div className="home-page page-transition">
       {loading && <LoadingScreen text={`${t('preparingSearch')} ${q.trim()}`} language={language} />}
+      {beachNotice && <div className={`beach-alert-notification ${beachNotice.type}`} role="status"><strong>{beachNotice.type === 'high' ? t('highAlertNotice') : t('cautionAlertNotice')}</strong><span>{beachNotice.name}: {beachNotice.type === 'high' ? t('highAlertNoticeDetail') : t('cautionAlertNoticeDetail')}</span><button type="button" onClick={() => setBeachNotice(null)} aria-label={t('dismiss')}>×</button></div>}
 
       <section className="home-hero">
         <div className="hero-bg"></div>
@@ -97,7 +113,7 @@ export default function Home() {
               {suggestions.slice(0, 5).map((b) => (
                 <button type="button" className="live-search-card" key={b._id} onClick={() => nav(`/beaches/${b._id}`)}>
                   <span className="live-search-marker"><MapPinned size={16}/></span>
-                  <span className="live-search-copy"><strong>{b.name}</strong><small>{b.district}, {b.state || t('india')}</small></span>
+                  <span className="live-search-copy"><strong>{b.name}</strong><small>{b.district}, {b.state || t('india')}</small>{b.safety?.alertLevel === 'high' && <em className="search-alert high">{t('highAlert')}</em>}{b.safety?.alertLevel === 'yellow' && <em className="search-alert caution">{t('caution')}</em>}</span>
                   <ChevronRight size={17}/>
                 </button>
               ))}
@@ -141,8 +157,8 @@ export default function Home() {
           </div>
           <div className="result-chips">
             {suggestions.slice(0, 8).map((b) => (
-              <button key={b._id} onClick={() => nav(`/beaches/${b._id}`)}>
-                <span><strong>{b.name}</strong><small>{b.district}, Tamil Nadu</small></span>
+              <button key={b._id} onClick={() => openBeach(b)}>
+                <span><strong>{b.name}</strong><small>{b.district}, {b.state || t('india')}</small>{b.safety?.alertLevel === 'high' && <em className="search-alert high">{t('highAlert')}</em>}{b.safety?.alertLevel === 'yellow' && <em className="search-alert caution">{t('caution')}</em>}</span>
                 <ChevronRight size={15}/>
               </button>
             ))}
