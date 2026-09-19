@@ -101,6 +101,10 @@ small {
 .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand-link { flex: 0 0 auto; transition: transform 0.3s ease; }
 .brand-link:hover { transform: scale(1.05); }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-width: 226px; }
+.brand-mark { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border: 1px solid rgba(8, 127, 140, 0.2); border-radius: 10px; background: var(--sea-soft); color: var(--sea); box-shadow: 0 5px 14px rgba(8, 127, 140, 0.12); }
+.brand-title { color: var(--ink); font-size: 16px; font-weight: 850; line-height: 1.1; letter-spacing: -0.3px; }
+.brand-sub { margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 700; line-height: 1.1; letter-spacing: 0.5px; text-transform: uppercase; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a { 
   color: #64748b; 
@@ -2204,6 +2208,8 @@ small {
 @media (max-width: 768px) {
   .container { width: min(100% - 32px, 1280px); }
   .navbar { height: 72px; }
+  .brand { min-width: 0; }
+  .brand-sub { display: none; }
   .nav-links { display: none; }
   .lang-toggle { display: none; }
   .hero-content { padding: 80px 0 120px; }
