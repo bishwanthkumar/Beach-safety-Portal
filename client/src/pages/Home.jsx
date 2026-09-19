@@ -97,7 +97,7 @@ export default function Home() {
               {suggestions.slice(0, 5).map((b) => (
                 <button type="button" className="live-search-card" key={b._id} onClick={() => nav(`/beaches/${b._id}`)}>
                   <span className="live-search-marker"><MapPinned size={16}/></span>
-                  <span className="live-search-copy"><strong>{b.name}</strong><small>{b.district}, {b.state || 'Tamil Nadu'}</small></span>
+                  <span className="live-search-copy"><strong>{b.name}</strong><small>{b.district}, {b.state || t('india')}</small></span>
                   <ChevronRight size={17}/>
                 </button>
               ))}
@@ -114,7 +114,7 @@ export default function Home() {
           <div className="hero-snapshot" aria-label="BeachSafe live overview">
             <div className="snapshot-heading"><span className="live-dot"></span><span>LIVE COASTAL OVERVIEW</span><small>Updated just now</small></div>
             <div className="snapshot-grid">
-              <div><strong>17+</strong><span>{t('beachEntries')}</span></div>
+              <div><strong>28+</strong><span>{t('beachEntries')}</span></div>
               <div><strong>24/7</strong><span>{t('safetyGuide')}</span></div>
               <div><strong>112</strong><span>{t('emergencyHelp')}</span></div>
             </div>
@@ -157,7 +157,7 @@ export default function Home() {
           <p>{t('trustDescription')}</p>
         </div>
         <div className="trust-metrics">
-          <div><strong>17+</strong><span>{t('beachEntries')}</span></div>
+            <div><strong>28+</strong><span>{t('beachEntries')}</span></div>
           <div><strong>Live</strong><span>{t('liveWeatherLayer')}</span></div>
           <div><strong>1-tap</strong><span>{t('oneTapEmergency')}</span></div>
         </div>

@@ -15,14 +15,15 @@ export const en = {
   // Hero Section
   heroTitle: "Know the beach.",
   heroSubtitle: "Before you go.",
-  heroDescription: "Search beaches across Tamil Nadu and get one clear view of current weather, marine conditions, safety notices, lifeguard information, facilities and emergency support.",
-  searchPlaceholder: "Search a beach, city or district...",
-  searchHint: "Search Tamil Nadu beaches",
+  heroDescription: "Search beaches across India and get one clear view of current weather, marine conditions, safety notices, lifeguard information, facilities and emergency support.",
+  searchPlaceholder: "Search an Indian beach, city or state...",
+  searchHint: "Search beaches across India",
   preparingSearch: "Preparing",
   liveWeather: "Live weather",
   marineConditions: "Marine conditions",
   safetyMap: "Safety map",
   emergencyHelp: "Emergency help",
+  india: "India",
   beachLevelSafetyView: "Beach-level safety view",
   timestampedInformation: "Timestamped information",
   safetyOverSightseeing: "Safety over sightseeing",
@@ -38,7 +39,7 @@ export const en = {
   searchCheckAct: "SEARCH • CHECK • ACT",
   oneBeachPage: "One beach page. Everything important.",
   trustDescription: "Start with a beach search, then move through the information that matters most before entering the water.",
-  beachEntries: "Tamil Nadu beach entries",
+  beachEntries: "Indian beach entries",
   liveWeatherLayer: "Live weather layer",
   oneTapEmergency: "1-tap emergency",
   
@@ -70,9 +71,9 @@ export const en = {
   rameswaramKanyakumari: "Rameswaram · Kanyakumari",
   
   // Popular Section
-  tamilNaduCoast: "TAMIL NADU COAST",
+  tamilNaduCoast: "INDIA COAST",
   startExploring: "Start exploring",
-  searchFullDirectory: "Search the full beach directory above",
+  searchFullDirectory: "Search the full India beach directory above",
   openFullSafetyPage: "Open full safety page",
   
   // Services Section
@@ -94,7 +95,7 @@ export const en = {
   call112: "Call 112",
   
   // Beach Details Page
-  beachProfile: "TAMIL NADU · BEACH PROFILE",
+  beachProfile: "INDIA · BEACH PROFILE",
   searchOtherBeaches: "Search other beaches",
   watching: "Watching",
   watch: "Watch",

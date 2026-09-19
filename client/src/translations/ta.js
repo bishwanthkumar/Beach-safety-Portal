@@ -15,14 +15,15 @@ export const ta = {
   // Hero Section
   heroTitle: "கடற்கரையை அறியுங்கள்.",
   heroSubtitle: "செல்லுமுன்.",
-  heroDescription: "தமிழ்நாடு முழுவதும் உள்ள கடற்கரைகளைத் தேடி, தற்போதைய வானிலை, கடல் நிலைமைகள், பாதுகாப்பு அறிவிப்புகள், லைஃப்கார்ட் தகவல்கள், வசதிகள் மற்றும் அவசரநிலை ஆதரவை ஒரே தெளிவான பார்வையில் பெறுங்கள்.",
-  searchPlaceholder: "கடற்கரை, நகரம் அல்லது மாவட்டத்தைத் தேடுங்கள்...",
-  searchHint: "தமிழ்நாடு கடற்கரைகளைத் தேடுங்கள்",
+  heroDescription: "இந்தியா முழுவதும் உள்ள கடற்கரைகளைத் தேடி, தற்போதைய வானிலை, கடல் நிலைமைகள், பாதுகாப்பு அறிவிப்புகள், லைஃப்கார்ட் தகவல்கள், வசதிகள் மற்றும் அவசரநிலை ஆதரவை ஒரே தெளிவான பார்வையில் பெறுங்கள்.",
+  searchPlaceholder: "இந்திய கடற்கரை, நகரம் அல்லது மாநிலத்தைத் தேடுங்கள்...",
+  searchHint: "இந்தியா முழுவதும் கடற்கரைகளைத் தேடுங்கள்",
   preparingSearch: "தயாராகிக்கிறது",
   liveWeather: "நேரடி வானிலை",
   marineConditions: "கடல் நிலைமைகள்",
   safetyMap: "பாதுகாப்பு வரைபடம்",
   emergencyHelp: "அவசரநிலை உதவி",
+  india: "இந்தியா",
   beachLevelSafetyView: "கடற்கரை மட்ட பாதுகாப்பு பார்வை",
   timestampedInformation: "நேரமுத்து தகவல்",
   safetyOverSightseeing: "பாதுகாப்பு கண்ணாடிப்பார்வை முன்னிடுங்கள்",
@@ -38,7 +39,7 @@ export const ta = {
   searchCheckAct: "தேடு • சரிபார் • செயல்",
   oneBeachPage: "ஒரு கடற்கரை பக்கம். அனைத்து முக்கியமானவை.",
   trustDescription: "கடற்கரை தேடலுடன் தொடங்கி, நீரில் நுழைவதற்கு முன் மிகவும் முக்கியமான தகவல்களைப் பெறுங்கள்.",
-  beachEntries: "தமிழ்நாடு கடற்கரை உள்ளீடுகள்",
+  beachEntries: "இந்திய கடற்கரை உள்ளீடுகள்",
   liveWeatherLayer: "நேரடி வானிலை அடுக்கு",
   oneTapEmergency: "1-டேப் அவசரநிலை",
   
@@ -70,9 +71,9 @@ export const ta = {
   rameswaramKanyakumari: "ராமேஸ்வரம் · கன்னியாகுமரி",
   
   // Popular Section
-  tamilNaduCoast: "தமிழ்நாடு கடற்கரை",
+  tamilNaduCoast: "இந்திய கடற்கரை",
   startExploring: "ஆராய்வைத் தொடங்குங்கள்",
-  searchFullDirectory: "முழு கடற்கரை அடைவை மேலே தேடுங்கள்",
+  searchFullDirectory: "முழு இந்திய கடற்கரை அடைவை மேலே தேடுங்கள்",
   openFullSafetyPage: "முழு பாதுகாப்பு பக்கத்தைத் திறக்கவும்",
   
   // Services Section
@@ -94,7 +95,7 @@ export const ta = {
   call112: "112 ஐ அழைக்கவும்",
   
   // Beach Details Page
-  beachProfile: "தமிழ்நாடு · கடற்கரை சுயவிவரம்",
+  beachProfile: "இந்தியா · கடற்கரை சுயவிவரம்",
   searchOtherBeaches: "மற்ற கடற்கரைகளைத் தேடுங்கள்",
   watching: "பார்க்கிறது",
   watch: "பார்",

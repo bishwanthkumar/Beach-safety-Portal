@@ -50,6 +50,7 @@ async function connectMongo() {
 function toPlainFallbackBeach(raw, index = 0) {
   return {
     ...raw,
+    state: raw.state || 'Tamil Nadu',
     _id: raw._id || `fallback-${index}`,
     id: raw._id || `fallback-${index}`
   };

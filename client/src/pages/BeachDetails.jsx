@@ -68,7 +68,7 @@ export default function BeachDetails() {
           <div>
             <span className="eyebrow">{t('beachProfile')}</span>
             <h1>{beach.name}</h1>
-            <p className="location-line"><MapPin size={15}/> {beach.district}, Tamil Nadu</p>
+            <p className="location-line"><MapPin size={15}/> {beach.district}, {beach.state || t('india')}</p>
           </div>
           <div className="beach-actions">
             <button className={`btn btn-outline ${watch ? 'btn-primary' : ''}`} onClick={toggleWatch}><Heart size={16} fill={watch ? 'currentColor' : 'none'}/> {watch ? t('watching') : t('watch')}</button>

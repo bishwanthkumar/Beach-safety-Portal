@@ -15,14 +15,15 @@ export const te = {
   // Hero Section
   heroTitle: "బీచ్‌ని తెలుసుకోండి.",
   heroSubtitle: "వెళ్లే ముందు.",
-  heroDescription: "తమిళనాడులోని బీచ్‌లను శోధించండి మరియు ప్రస్తుత వాతావరణం, సముద్ర పరిస్థితులు, భద్రతా నోటీసులు, లైఫ్‌గార్డ్ సమాచారం, సౌకర్యాలు మరియు అత్యవసర మద్దతును ఒక స్పష్టమైన దృక్పథంలో పొందండి.",
-  searchPlaceholder: "బీచ్, నగరం లేదా జిల్లాను శోధించండి...",
-  searchHint: "తమిళనాడు బీచ్‌లను శోధించండి",
+  heroDescription: "భారతదేశంలోని బీచ్‌లను శోధించండి మరియు ప్రస్తుత వాతావరణం, సముద్ర పరిస్థితులు, భద్రతా నోటీసులు, లైఫ్‌గార్డ్ సమాచారం, సౌకర్యాలు మరియు అత్యవసర మద్దతును ఒక స్పష్టమైన దృక్పథంలో పొందండి.",
+  searchPlaceholder: "భారతీయ బీచ్, నగరం లేదా రాష్ట్రాన్ని శోధించండి...",
+  searchHint: "భారతదేశంలోని బీచ్‌లను శోధించండి",
   preparingSearch: "సిద్ధం చేస్తోంది",
   liveWeather: "లైవ్ వాతావరణం",
   marineConditions: "సముద్ర పరిస్థితులు",
   safetyMap: "భద్రతా మ్యాప్",
   emergencyHelp: "అత్యవసర సహాయం",
+  india: "భారతదేశం",
   beachLevelSafetyView: "బీచ్ స్థాయి భద్రతా దృశ్యం",
   timestampedInformation: "టైమ్‌స్టాంప్ సమాచారం",
   safetyOverSightseeing: "భద్రతను దర్శనం కంటే ముందు ఉంచండి",
@@ -38,7 +39,7 @@ export const te = {
   searchCheckAct: "శోధించండి • తనిఖీ చేయండి • చర్య తీసుకోండి",
   oneBeachPage: "ఒక బీచ్ పేజీ. అన్నింటినీ ముఖ్యమైనవి.",
   trustDescription: "బీచ్ శోధనతో ప్రారంభించి, నీటిలోకి ప్రవేశించే ముందు అత్యంత ముఖ్యమైన సమాచారం ద్వారా ముందుకు వెళ్లండి.",
-  beachEntries: "తమిళనాడు బీచ్ ఎంట్రీలు",
+  beachEntries: "భారతీయ బీచ్ ఎంట్రీలు",
   liveWeatherLayer: "లైవ్ వాతావరణ లేయర్",
   oneTapEmergency: "1-ట్యాప్ అత్యవసర",
   
@@ -70,9 +71,9 @@ export const te = {
   rameswaramKanyakumari: "రామేశ్వరం · కన్యాకుమారి",
   
   // Popular Section
-  tamilNaduCoast: "తమిళనాడు తీరం",
+  tamilNaduCoast: "భారత తీర ప్రాంతం",
   startExploring: "అన్వేషణ ప్రారంభించండి",
-  searchFullDirectory: "పైన పూర్తి బీచ్ డైరెక్టరీని శోధించండి",
+  searchFullDirectory: "పైన పూర్తి భారతీయ బీచ్ డైరెక్టరీని శోధించండి",
   openFullSafetyPage: "పూర్తి భద్రతా పేజీని తెరవండి",
   
   // Services Section
@@ -94,7 +95,7 @@ export const te = {
   call112: "112 కాల్ చేయండి",
   
   // Beach Details Page
-  beachProfile: "తమిళనాడు · బీచ్ ప్రొఫైల్",
+  beachProfile: "భారతదేశం · బీచ్ ప్రొఫైల్",
   searchOtherBeaches: "ఇతర బీచ్‌లను శోధించండి",
   watching: "చూస్తోంది",
   watch: "చూడండి",

@@ -15,14 +15,15 @@ export const hi = {
   // Hero Section
   heroTitle: "समुद्र तट को जानें।",
   heroSubtitle: "जाने से पहले।",
-  heroDescription: "तमिलनाडु में समुद्र तटों की खोज करें और मौजूदा मौसम, समुद्रीय स्थितियों, सुरक्षा सूचनाओं, लाइफगार्ड जानकारी, सुविधाओं और आपातकालीन सहायता का एक स्पष्ट दृश्य प्राप्त करें।",
-  searchPlaceholder: "समुद्र तट, शहर या जिला खोजें...",
-  searchHint: "तमिलनाडु समुद्र तट खोजें",
+  heroDescription: "भारत भर के समुद्र तटों की खोज करें और मौजूदा मौसम, समुद्रीय स्थितियों, सुरक्षा सूचनाओं, लाइफगार्ड जानकारी, सुविधाओं और आपातकालीन सहायता का एक स्पष्ट दृश्य प्राप्त करें।",
+  searchPlaceholder: "भारतीय समुद्र तट, शहर या राज्य खोजें...",
+  searchHint: "भारत भर के समुद्र तट खोजें",
   preparingSearch: "तैयार हो रहा है",
   liveWeather: "लाइव मौसम",
   marineConditions: "समुद्रीय स्थितियां",
   safetyMap: "सुरक्षा मानचित्र",
   emergencyHelp: "आपातकालीन सहायता",
+  india: "भारत",
   beachLevelSafetyView: "समुद्र तट स्तर सुरक्षा दृश्य",
   timestampedInformation: "समय-मुद्रित जानकारी",
   safetyOverSightseeing: "सुरक्षा दर्शन को प्राथमिकता दें",
@@ -38,7 +39,7 @@ export const hi = {
   searchCheckAct: "खोजें • जांचें • कार्य करें",
   oneBeachPage: "एक समुद्र तट पृष्ठ। सब कुछ महत्वपूर्ण।",
   trustDescription: "समुद्र तट खोज से शुरू करें, फिर पानी में प्रवेश करने से पहले सबसे महत्वपूर्ण जानकारी के माध्यम से आगे बढ़ें।",
-  beachEntries: "तमिलनाडु समुद्र तट प्रविष्टियां",
+  beachEntries: "भारतीय समुद्र तट प्रविष्टियां",
   liveWeatherLayer: "लाइव मौसम परत",
   oneTapEmergency: "1-टैप आपातकालीन",
   
@@ -70,9 +71,9 @@ export const hi = {
   rameswaramKanyakumari: "रामेश्वरम · कन्याकुमारी",
   
   // Popular Section
-  tamilNaduCoast: "तमिलनाडु तट",
+  tamilNaduCoast: "भारत का तट",
   startExploring: "अन्वेषण शुरू करें",
-  searchFullDirectory: "पूर्ण समुद्र तट निर्देशिका ऊपर खोजें",
+  searchFullDirectory: "भारत की पूरी समुद्र तट निर्देशिका ऊपर खोजें",
   openFullSafetyPage: "पूर्ण सुरक्षा पृष्ठ खोलें",
   
   // Services Section
@@ -94,7 +95,7 @@ export const hi = {
   call112: "112 कॉल करें",
   
   // Beach Details Page
-  beachProfile: "तमिलनाडु · समुद्र तट प्रोफाइल",
+  beachProfile: "भारत · समुद्र तट प्रोफाइल",
   searchOtherBeaches: "अन्य समुद्र तट खोजें",
   watching: "देख रहे हैं",
   watch: "देखें",
