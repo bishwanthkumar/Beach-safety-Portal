@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Heart, Clock, MapPin, LifeBuoy, Share2, Navigation2, ShieldCheck, ChevronRight } from 'lucide-react';
 import { getBeachFull } from '../api';
@@ -12,7 +13,7 @@ import BeachMap from '../components/BeachMap';
 import EmergencyPanel from '../components/EmergencyPanel';
 import ReportHazard from '../components/ReportHazard';
 import FamilyChecklist from '../components/FamilyChecklist';
-import { useLanguage } from '../contexts/LanguageContext';
+import { LanguageContext, useLanguage } from '../contexts/LanguageContext';
 
 export default function BeachDetails() {
   const { id } = useParams();
@@ -21,7 +22,8 @@ export default function BeachDetails() {
   const [watch, setWatch] = useState(localStorage.getItem(`watch-${id}`) === '1');
   const [error, setError] = useState('');
   const [toast, setToast] = useState('');
-  const { t } = useLanguage();
+  const { language } = useContext(LanguageContext);
+  const { t } = useLanguage(language);
 
   useEffect(() => {
     let alive = true;

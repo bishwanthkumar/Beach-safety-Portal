@@ -142,6 +142,8 @@ export const en = {
   
   // Safety Status
   noActiveAdvisory: "No active advisory",
+  recommendedWithCaution: "Recommended with caution",
+  notRecommendedWaterEntry: "Not recommended for water entry",
   caution: "Caution",
   avoidWater: "Avoid Water",
   safetyStatusDescription: "Check current alerts and local instructions",
@@ -230,4 +232,29 @@ export const en = {
   familyMode: "FAMILY MODE",
   safetyChecklist: "Safety checklist",
   completed: "completed"
+  ,myBeachPlan: "MY BEACH PLAN"
+  ,personalGoNoGo: "Personal go / no-go"
+  ,planIntro: "Answer four quick questions. This is a decision aid, not a guarantee of safety."
+  ,planCanSwim: "Can you swim confidently?"
+  ,planGroupNeedsCare: "Is anyone with you a child or older adult?"
+  ,planFirstVisit: "Is this your first visit here?"
+  ,planActivity: "What will you do at the beach?"
+  ,yes: "Yes"
+  ,no: "No"
+  ,planEnterWater: "Enter the water"
+  ,planWalkOnly: "Walk only"
+  ,planNotRecommended: "Not recommended for you now"
+  ,planCaution: "Recommended with caution"
+  ,planNoAdvisory: "No active advisory for your plan"
+  ,yourCurrentPlan: "YOUR CURRENT PLAN"
+  ,bestSupervisedWindow: "Best supervised window"
+  ,planCompleteAnswers: "Complete all four answers to see your personalized recommendation."
+  ,planAskLifeguard: "Ask the lifeguard for the current supervised hours."
+  ,planReasonRed: "The current beach conditions are not recommended for water entry."
+  ,planReasonYellow: "A caution-level condition or advisory is active."
+  ,planReasonNonSwimmer: "You selected that you are not a swimmer, so a caution-level condition is not a good match for water entry."
+  ,planReasonChildren: "Children need close supervision when conditions are not clear."
+  ,planReasonFirstVisit: "For a first visit, use marked areas and ask the lifeguard before entering."
+  ,planReasonWalk: "Walking only keeps the water-entry decision out of your plan."
+  ,planReasonClear: "No active portal advisory is recorded for this beach right now."
 };
