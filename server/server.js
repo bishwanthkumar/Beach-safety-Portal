@@ -75,7 +75,13 @@ async function getBeachAlerts(beachId, fallbackIndex = null) {
 }
 
 app.get('/api/health', (req, res) => {
-  res.json({ success: true, service: 'BeachSafe API', mongoReady });
+  res.json({
+    success: true,
+    service: 'BeachSafe API',
+    mongoReady,
+    database: mongoReady ? 'MongoDB' : 'fallback demo data',
+    mongoConfigured: Boolean(process.env.MONGODB_URI)
+  });
 });
 
 app.get('/', (req, res) => {

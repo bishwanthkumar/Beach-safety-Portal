@@ -1,6 +1,6 @@
-# BeachSafe — Interactive Tamil Nadu Beach Safety Portal
+# BeachSafe — India Beach Safety Portal
 
-A MERN-stack beach safety portal focused on Tamil Nadu beaches. The app supports beach search, a search loading screen, beach detail pages, live weather, marine conditions, safety status, alerts, lifeguard data, nearby facilities, safety map, emergency support, Tamil/English UI toggle, family safety checklist, beach watch, and community hazard reporting.
+A MERN-stack beach safety portal for beaches across India. The app supports beach search, beach detail pages, live weather, marine conditions, safety status, alerts, lifeguard data, nearby facilities, safety map, emergency support, Tamil/Hindi/Telugu/English UI, a personalized beach plan, beach watch, and community hazard reporting.
 
 ## Stack
 - Frontend: React + Vite + React Router + Leaflet/React-Leaflet + Lucide
@@ -34,7 +34,27 @@ MONGODB_URI=mongodb://127.0.0.1:27017/beachsafety
 CLIENT_ORIGIN=http://localhost:5173
 ```
 
-MongoDB Atlas also works. If MongoDB is unavailable, the API falls back to the seeded in-memory dataset so the frontend can still be demonstrated.
+For local MongoDB, install MongoDB Community Server, start the MongoDB service, and keep the local URI above.
+
+For MongoDB Atlas:
+
+1. Create a free cluster at MongoDB Atlas.
+2. Create a database user and allow your development IP in Network Access.
+3. Replace `MONGODB_URI` with the Atlas connection string, for example:
+
+```env
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>/<database>?retryWrites=true&w=majority
+```
+
+Do not commit `server/.env` or place credentials in source code. The repository ignores environment files.
+
+Check the connection after starting the API:
+
+```bash
+curl http://localhost:5000/api/health
+```
+
+MongoDB connected responses include `"mongoReady":true` and `"database":"MongoDB"`. If MongoDB is unavailable, the API explicitly reports `"database":"fallback demo data"` and the frontend remains usable.
 
 ## 3. Seed the database
 
@@ -69,7 +89,7 @@ Open the frontend URL shown by Vite, normally `http://localhost:5173` or the nex
 
 ## Core demo flow
 
-Home → search a Tamil Nadu beach → loading animation → beach detail → live weather + humidity + temperature → marine conditions → safety status → alerts → lifeguard → nearby facilities → safety map → emergency support → report a hazard.
+Home → search an Indian beach → beach alert notification → beach detail → live weather + humidity + temperature → marine conditions → personalized beach plan → alerts → lifeguard → nearby facilities → safety map → emergency support → report a hazard.
 
 ## Notes
 - Weather and marine conditions are retrieved live from Open-Meteo through the Express backend.
