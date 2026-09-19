@@ -14,17 +14,21 @@ const icon = new L.Icon({
 
 function Recenter({ center }) { const map = useMap(); useEffect(() => { map.setView(center, 13); }, [center, map]); return null; }
 
-export default function BeachMap({ beach, facilities = [] }) {
+export default function BeachMap({ beach, facilities = [], focusPoint = null }) {
   const { language } = useContext(LanguageContext);
   const { t } = useLanguage(language);
   const center = [beach.coordinates.lat, beach.coordinates.lng];
+  const mapCenter = focusPoint ? [focusPoint.lat, focusPoint.lng] : center;
   return <div className="map-wrap">
     <div className="map-header"><div><span className="eyebrow">{t('interactiveSafetyMap')}</span><h3>{beach.name}</h3></div><span className="map-legend">{t('mapLegend')}</span></div>
     <MapContainer center={center} zoom={13} scrollWheelZoom={false} className="leaflet-map">
-      <Recenter center={center}/>
+      <Recenter center={mapCenter}/>
       <TileLayer attribution='&copy; OpenStreetMap contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={center} icon={icon}><Popup><strong>{beach.name}</strong><br/>{t('beachLocation')}</Popup></Marker>
-      {facilities.slice(0, 7).map((f) => <CircleMarker key={f._id} center={[f.coordinates.lat, f.coordinates.lng]} radius={7}><Popup><strong>{f.name}</strong><br/>{f.type}<br/>{f.distanceMeters} m {t('away')}</Popup></CircleMarker>)}
+      {facilities.slice(0, 7).map((f) => {
+        const selected = focusPoint && f.coordinates?.lat === focusPoint.lat && f.coordinates?.lng === focusPoint.lng;
+        return <CircleMarker key={f._id} center={[f.coordinates.lat, f.coordinates.lng]} radius={selected ? 11 : 7} pathOptions={selected ? { color: '#d95243', fillColor: '#f4b46a', fillOpacity: 1, weight: 3 } : undefined}><Popup><strong>{f.name}</strong><br/>{f.type}<br/>{f.distanceMeters} m {t('away')}</Popup></CircleMarker>;
+      })}
     </MapContainer>
   </div>;
 }

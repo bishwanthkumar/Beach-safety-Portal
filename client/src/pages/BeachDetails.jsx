@@ -22,6 +22,7 @@ export default function BeachDetails() {
   const [watch, setWatch] = useState(localStorage.getItem(`watch-${id}`) === '1');
   const [error, setError] = useState('');
   const [toast, setToast] = useState('');
+  const [mapFocus, setMapFocus] = useState(null);
   const { language } = useContext(LanguageContext);
   const { t } = useLanguage(language);
 
@@ -50,6 +51,12 @@ export default function BeachDetails() {
       else await navigator.clipboard.writeText(window.location.href);
       setToast(t('beachLinkReady'));
     } catch { /* user cancelled sharing */ }
+  }
+
+  function locateLifeguard() {
+    const lifeguard = facilities?.find((facility) => facility.type === 'Lifeguard');
+    if (lifeguard?.coordinates) setMapFocus(lifeguard.coordinates);
+    document.getElementById('map')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   if (loading) return <LoadingScreen text={t('preparingBeachSafetyView')} />;
@@ -108,7 +115,7 @@ export default function BeachDetails() {
             <p><Clock size={14}/> {beach.lifeguard?.dutyHours || t('notAvailable')}</p>
             <small>{beach.lifeguard?.towers || 0} {t('watchTowers')} • {t('nearestTower')} {beach.lifeguard?.nearestTowerMeters || '—'} {t('meters')}</small>
           </div>
-          <button className="tiny-outline">{t('locate')} <Navigation2 size={13}/></button>
+          <button className="tiny-outline" onClick={locateLifeguard}>{t('locate')} <Navigation2 size={13}/></button>
         </div>
       </section>
 
@@ -130,7 +137,7 @@ export default function BeachDetails() {
       </section>
 
       <section className="container" id="map">
-        <BeachMap beach={beach} facilities={facilities}/>
+        <BeachMap beach={beach} facilities={facilities} focusPoint={mapFocus}/>
       </section>
 
       <section className="container action-grid">
