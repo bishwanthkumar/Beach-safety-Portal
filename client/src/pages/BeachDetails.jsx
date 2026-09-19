@@ -53,7 +53,7 @@ export default function BeachDetails() {
   }
 
   if (loading) return <LoadingScreen text={t('preparingBeachSafetyView')} />;
-  if (error || !data) return <div className="container page-pad"><div className="error-box"><strong>Beach page unavailable</strong><p>{error || 'Beach not found.'}</p><Link to="/">← Back to search</Link></div></div>;
+  if (error || !data) return <div className="container page-pad"><div className="error-box"><strong>{t('beachPageUnavailable')}</strong><p>{error || t('beachNotFound')}</p><Link to="/">← {t('backToSearch')}</Link></div></div>;
 
   const { beach, weather, marine, safetyStatus, alerts, facilities } = data;
 
@@ -104,8 +104,8 @@ export default function BeachDetails() {
           <div className="facility-icon"><LifeBuoy size={24}/></div>
           <div>
             <span className="eyebrow">{t('lifeguardService')}</span>
-            <h3>{beach.lifeguard?.status || t('unknown')}</h3>
-            <p><Clock size={14}/> {beach.lifeguard?.dutyHours || 'Not available'}</p>
+            <h3>{beach.lifeguard?.status === 'On Duty' ? t('statusOnDuty') : beach.lifeguard?.status === 'Limited' ? t('statusLimited') : beach.lifeguard?.status || t('unknown')}</h3>
+            <p><Clock size={14}/> {beach.lifeguard?.dutyHours || t('notAvailable')}</p>
             <small>{beach.lifeguard?.towers || 0} {t('watchTowers')} • {t('nearestTower')} {beach.lifeguard?.nearestTowerMeters || '—'} {t('meters')}</small>
           </div>
           <button className="tiny-outline">{t('locate')} <Navigation2 size={13}/></button>
@@ -120,7 +120,7 @@ export default function BeachDetails() {
       <section className="container content-grid" id="alerts">
         <div>
           <AlertList alerts={alerts}/>
-          <div className="source-note"><ShieldCheck size={15}/> Weather and marine layers are informational. Official warnings, closures, signs and lifeguard instructions take precedence.</div>
+          <div className="source-note"><ShieldCheck size={15}/> {t('officialInformationNote')}</div>
         </div>
           <FamilyChecklist beach={beach} safetyStatus={safetyStatus} marine={marine}/>
       </section>

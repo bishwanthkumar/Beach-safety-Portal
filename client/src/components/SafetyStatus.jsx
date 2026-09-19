@@ -18,10 +18,10 @@ export default function SafetyStatus({ status }) {
   return <div className={`status-card ${cfg.className}`}>
     <div className="status-icon"><Icon size={30}/></div>
     <div>
-      <div className="eyebrow">CURRENT BEACH STATUS</div>
+      <div className="eyebrow">{t('currentBeachStatus')}</div>
       <h2>{title}</h2>
       <p>{status?.reason}</p>
-      <small>Information summary • {status?.generatedAt ? new Date(status.generatedAt).toLocaleTimeString() : 'updated now'}</small>
+      <small>{t('informationSummary')} • {status?.generatedAt ? new Date(status.generatedAt).toLocaleTimeString() : t('updatedNow')}</small>
     </div>
   </div>;
 }
