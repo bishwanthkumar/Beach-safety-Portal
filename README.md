@@ -87,6 +87,35 @@ npm run dev
 
 Open the frontend URL shown by Vite, normally `http://localhost:5173` or the next available port.
 
+## 5. Deploy
+
+### API on Render
+
+1. Create a new Render Blueprint from this repository, or create a Web Service with `server` as the root directory.
+2. Render can use the included `render.yaml`.
+3. Set these environment variables in Render:
+
+```env
+MONGODB_URI=mongodb+srv://<atlas-user>:<atlas-password>@<atlas-host>/beachsafety?retryWrites=true&w=majority
+CLIENT_ORIGIN=https://<your-vercel-domain>
+```
+
+Render uses `npm install` and `npm start`, and checks `/api/health`.
+
+### Frontend on Vercel
+
+1. Import this repository into Vercel.
+2. Set the project root directory to `client`.
+3. Add this environment variable:
+
+```env
+VITE_API_URL=https://<your-render-api-domain>/api
+```
+
+The included `client/vercel.json` handles Vite history fallback for routes such as `/beaches/:id`.
+
+After deployment, update Render's `CLIENT_ORIGIN` with the final Vercel URL and redeploy the API.
+
 ## Core demo flow
 
 Home → search an Indian beach → beach alert notification → beach detail → live weather + humidity + temperature → marine conditions → personalized beach plan → alerts → lifeguard → nearby facilities → safety map → emergency support → report a hazard.
