@@ -43,7 +43,7 @@ async function connectMongo() {
     console.log('MongoDB connected');
   } catch (err) {
     mongoReady = false;
-    console.warn('MongoDB unavailable — using fallback seeded data for demo mode.');
+    console.warn(`MongoDB unavailable — using fallback seeded data for demo mode. ${err?.message || 'Check MONGODB_URI, Atlas Network Access, and database credentials.'}`);
   }
 }
 
