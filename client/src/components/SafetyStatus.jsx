@@ -2,8 +2,8 @@ import { AlertTriangle, CheckCircle2, ShieldAlert } from 'lucide-react';
 
 const map = {
   green: { icon: CheckCircle2, title: 'No Active Advisory', className: 'status-green' },
-  yellow: { icon: AlertTriangle, title: 'Caution', className: 'status-yellow' },
-  red: { icon: ShieldAlert, title: 'Avoid Water', className: 'status-red' }
+  yellow: { icon: AlertTriangle, title: 'Recommended With Caution', className: 'status-yellow' },
+  red: { icon: ShieldAlert, title: 'Not Recommended For Water Entry', className: 'status-red' }
 };
 
 export default function SafetyStatus({ status }) {

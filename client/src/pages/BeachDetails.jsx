@@ -120,7 +120,7 @@ export default function BeachDetails() {
           <AlertList alerts={alerts}/>
           <div className="source-note"><ShieldCheck size={15}/> Weather and marine layers are informational. Official warnings, closures, signs and lifeguard instructions take precedence.</div>
         </div>
-        <FamilyChecklist/>
+          <FamilyChecklist beach={beach} safetyStatus={safetyStatus} marine={marine}/>
       </section>
 
       <section className="container" id="facilities">

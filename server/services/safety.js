@@ -22,9 +22,9 @@ export function computeSafetyStatus({ beach, marine, alerts = [] }) {
   if (active.length > 0) reasons.push(`${active.length} active portal alert${active.length > 1 ? 's' : ''}`);
 
   const status = severity >= 2
-    ? { key: 'red', label: 'Avoid Water' }
+    ? { key: 'red', label: 'Not recommended for water entry' }
     : severity === 1
-      ? { key: 'yellow', label: 'Caution' }
+      ? { key: 'yellow', label: 'Recommended with caution' }
       : { key: 'green', label: 'No Active Advisory' };
 
   return {
