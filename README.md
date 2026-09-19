@@ -89,19 +89,6 @@ Open the frontend URL shown by Vite, normally `http://localhost:5173` or the nex
 
 ## 5. Deploy
 
-### API on Render
-
-1. Create a new Render Blueprint from this repository, or create a Web Service with `server` as the root directory.
-2. Render can use the included `render.yaml`.
-3. Set these environment variables in Render:
-
-```env
-MONGODB_URI=mongodb+srv://<atlas-user>:<atlas-password>@<atlas-host>/beachsafety?retryWrites=true&w=majority
-CLIENT_ORIGIN=https://<your-vercel-domain>
-```
-
-Render uses `npm install` and `npm start`, and checks `/api/health`.
-
 ### Frontend on Vercel
 
 1. Import this repository into Vercel.
@@ -109,12 +96,19 @@ Render uses `npm install` and `npm start`, and checks `/api/health`.
 3. Add this environment variable:
 
 ```env
-VITE_API_URL=https://<your-render-api-domain>/api
+VITE_API_URL=https://<your-api-domain>/api
 ```
 
 The included `client/vercel.json` handles Vite history fallback for routes such as `/beaches/:id`.
 
-After deployment, update Render's `CLIENT_ORIGIN` with the final Vercel URL and redeploy the API.
+The Express API must already be hosted at `your-api-domain` and configured with:
+
+```env
+MONGODB_URI=mongodb+srv://<atlas-user>:<atlas-password>@<atlas-host>/beachsafety?retryWrites=true&w=majority
+CLIENT_ORIGIN=https://<your-vercel-domain>
+```
+
+Vercel hosts the frontend in this setup; it does not automatically host the existing Express server.
 
 ## Core demo flow
 
