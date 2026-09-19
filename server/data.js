@@ -43,7 +43,7 @@ export function makeFacilities(beach, beachId = null) {
     ['Main Lifeguard Tower', 'Lifeguard', beach.lifeguard?.nearestTowerMeters || 320]
   ];
   return multipliers.map(([name, type, distance], idx) => ({
-    _id: `${beachId || beach.name}-${idx}`,
+    ...((typeof beachId === 'string' || beachId === null) ? { _id: `${beachId || beach.name}-${idx}` } : {}),
     beachId,
     name,
     type,

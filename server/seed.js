@@ -1,9 +1,12 @@
 import 'dotenv/config';
+import dns from 'node:dns';
 import mongoose from 'mongoose';
 import Beach from './models/Beach.js';
 import Facility from './models/Facility.js';
 import Alert from './models/Alert.js';
 import { beaches, makeFacilities, defaultAlerts } from './data.js';
+
+dns.setServers(['8.8.8.8', '1.1.1.1']);
 
 async function run() {
   const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/beachsafety';
