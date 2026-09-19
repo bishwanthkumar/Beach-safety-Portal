@@ -55,7 +55,12 @@ export default function BeachDetails() {
 
   function locateLifeguard() {
     const lifeguard = facilities?.find((facility) => facility.type === 'Lifeguard');
-    if (lifeguard?.coordinates) setMapFocus(lifeguard.coordinates);
+    selectFacility(lifeguard);
+  }
+
+  function selectFacility(facility) {
+    if (!facility?.coordinates) return;
+    setMapFocus(facility.coordinates);
     document.getElementById('map')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -133,7 +138,7 @@ export default function BeachDetails() {
       </section>
 
       <section className="container" id="facilities">
-        <Facilities facilities={facilities}/>
+        <Facilities facilities={facilities} onSelectFacility={selectFacility}/>
       </section>
 
       <section className="container" id="map">
