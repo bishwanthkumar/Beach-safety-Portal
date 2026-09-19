@@ -315,6 +315,7 @@ export const hi = {
   ,nearestLifeguard: "निकटतम लाइफगार्ड"
   ,interactiveSafetyMap: "इंटरैक्टिव सुरक्षा मानचित्र"
   ,mapLegend: "समुद्र तट • सुविधाएं • सुरक्षा बिंदु"
+  ,matches: "परिणाम"
   ,currentBeachStatus: "वर्तमान समुद्र तट स्थिति"
   ,informationSummary: "जानकारी सारांश"
   ,updatedNow: "अभी अपडेट किया गया"

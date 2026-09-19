@@ -317,6 +317,7 @@ export const en = {
   ,nearestLifeguard: "Nearest lifeguard"
   ,interactiveSafetyMap: "INTERACTIVE SAFETY MAP"
   ,mapLegend: "Beach • Facilities • Safety points"
+  ,matches: "matches"
   ,currentBeachStatus: "CURRENT BEACH STATUS"
   ,informationSummary: "Information summary"
   ,updatedNow: "updated now"

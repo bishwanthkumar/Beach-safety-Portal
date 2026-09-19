@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Search, ShieldCheck, Waves, MapPinned, Siren, ArrowRight,
@@ -31,6 +31,22 @@ export default function Home() {
   const { t } = useLanguage(language);
 
   const searchHint = useMemo(() => q.trim() ? `Search results for "${q.trim()}"` : t('searchHint'), [q, t]);
+
+  useEffect(() => {
+    const query = q.trim();
+    if (query.length < 2) {
+      setSuggestions([]);
+      return undefined;
+    }
+    const timer = setTimeout(async () => {
+      try {
+        setSuggestions(await searchBeaches(query));
+      } catch {
+        setSuggestions([]);
+      }
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [q]);
 
   async function doSearch(e) {
     e?.preventDefault();
@@ -74,6 +90,19 @@ export default function Home() {
           </form>
 
           <div className="search-hint"><Navigation size={13}/> {searchHint}</div>
+
+          {q.trim().length >= 2 && suggestions.length > 0 && (
+            <div className="live-search-results" aria-label={t('searchResults')}>
+              <div className="live-search-heading"><span>{t('chooseBeach')}</span><small>{suggestions.length} {t('matches')}</small></div>
+              {suggestions.slice(0, 5).map((b) => (
+                <button type="button" className="live-search-card" key={b._id} onClick={() => nav(`/beaches/${b._id}`)}>
+                  <span className="live-search-marker"><MapPinned size={16}/></span>
+                  <span className="live-search-copy"><strong>{b.name}</strong><small>{b.district}, {b.state || 'Tamil Nadu'}</small></span>
+                  <ChevronRight size={17}/>
+                </button>
+              ))}
+            </div>
+          )}
 
           <div className="quick-pills">
             <span><CloudSun size={15}/> {t('liveWeather')}</span>

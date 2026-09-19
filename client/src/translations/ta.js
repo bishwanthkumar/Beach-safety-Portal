@@ -317,6 +317,7 @@ export const ta = {
   ,nearestLifeguard: "அருகிலுள்ள லைஃப்கார்ட்"
   ,interactiveSafetyMap: "ஊடாடும் பாதுகாப்பு வரைபடம்"
   ,mapLegend: "கடற்கரை • வசதிகள் • பாதுகாப்பு புள்ளிகள்"
+  ,matches: "பொருத்தங்கள்"
   ,currentBeachStatus: "தற்போதைய கடற்கரை நிலை"
   ,informationSummary: "தகவல் சுருக்கம்"
   ,updatedNow: "இப்போது புதுப்பிக்கப்பட்டது"

@@ -315,6 +315,7 @@ export const te = {
   ,nearestLifeguard: "సమీప లైఫ్‌గార్డ్"
   ,interactiveSafetyMap: "ఇంటరాక్టివ్ భద్రతా మ్యాప్"
   ,mapLegend: "బీచ్ • సౌకర్యాలు • భద్రతా పాయింట్లు"
+  ,matches: "ఫలితాలు"
   ,currentBeachStatus: "ప్రస్తుత బీచ్ స్థితి"
   ,informationSummary: "సమాచార సారాంశం"
   ,updatedNow: "ఇప్పుడే నవీకరించబడింది"

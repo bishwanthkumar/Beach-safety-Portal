@@ -449,6 +449,26 @@ small {
   transform: translateY(-2px);
 }
 
+.live-search-results {
+  width: min(650px, 100%);
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid rgba(232, 245, 243, 0.2);
+  border-radius: 12px;
+  background: rgba(7, 30, 39, 0.88);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(16px);
+}
+.live-search-heading { display: flex; justify-content: space-between; padding: 5px 10px 9px; color: #d9f2ee; font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
+.live-search-heading small { color: rgba(217, 242, 238, 0.56); font-size: 10px; font-weight: 500; letter-spacing: 0; text-transform: none; }
+.live-search-card { width: 100%; display: flex; align-items: center; gap: 11px; padding: 12px 10px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: white; text-align: left; transition: background 0.2s ease, border-color 0.2s ease; }
+.live-search-card:hover { border-color: rgba(232, 245, 243, 0.2); background: rgba(255, 255, 255, 0.1); }
+.live-search-marker { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: rgba(244, 180, 106, 0.15); color: #f4b46a; }
+.live-search-copy { min-width: 0; display: flex; flex: 1; flex-direction: column; gap: 3px; }
+.live-search-copy strong { overflow: hidden; color: #fff; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.live-search-copy small { color: rgba(217, 242, 238, 0.68); font-size: 11px; }
+.live-search-card > svg { color: #f4b46a; }
+
 /* COMMON */
 .eyebrow { 
   color: var(--sea); 
@@ -2573,6 +2593,7 @@ body::before {
   .hero-content { padding: 74px 0 142px; }
   .hero-content h1, .hero-content p, .home-search, .quick-pills { max-width: none; }
   .hero-snapshot { position: relative; top: auto; right: auto; width: 100%; margin-top: 30px; }
+  .live-search-results { width: 100%; }
   .snapshot-heading small { font-size: 10px; }
   .hero-bottom-trust { bottom: 18px; }
   .emergency-location { align-items: flex-start; }
